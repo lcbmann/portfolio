@@ -1,4 +1,4 @@
-// Navigation Toggle
+// Existing Navigation Toggle Code
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navLinksLi = document.querySelectorAll('.nav-links li');
@@ -40,6 +40,22 @@ window.addEventListener('scroll', () => {
         const rect = bar.getBoundingClientRect();
         if(rect.top < window.innerHeight) {
             bar.style.width = bar.getAttribute('style').split('width: ')[1];
+        }
+    });
+});
+
+// Blog Read More Toggle
+const blogReadMoreButtons = document.querySelectorAll('.blog-read-more-btn');
+
+blogReadMoreButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const blogMoreInfo = button.nextElementSibling;
+        if (blogMoreInfo.style.display === "block") {
+            blogMoreInfo.style.display = "none";
+            button.textContent = "Read More";
+        } else {
+            blogMoreInfo.style.display = "block";
+            button.textContent = "Read Less";
         }
     });
 });

@@ -337,6 +337,8 @@ footer p {
     text-decoration: underline;
 }
 
+
+
 /* Blog Header */
 .blog-header {
     padding: 5rem 2rem;
@@ -392,6 +394,34 @@ footer p {
     color: var(--text-color);
 }
 
+/* Blog Excerpt */
+.blog-post .excerpt {
+    margin-bottom: 1rem;
+}
+
+/* Read More Button */
+.blog-read-more-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blog-read-more-btn:hover {
+    text-decoration: underline;
+}
+
+/* Full Content */
+.blog-more-info {
+    display: none;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+
 .read-more {
     color: var(--accent-color);
     font-weight: bold;
@@ -399,6 +429,19 @@ footer p {
 
 .read-more:hover {
     text-decoration: underline;
+}
+
+
+
+/* Responsive Adjustments for Blog */
+@media (max-width: 768px) {
+    .blog-posts {
+        padding: 2rem 1rem;
+    }
+
+    .blog-post {
+        padding: 1rem;
+    }
 }
 
 /* Animations */
