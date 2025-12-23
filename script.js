@@ -3,6 +3,8 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navLinksLi = document.querySelectorAll('.nav-links li');
 
+console.info('[Portfolio Debug] UI script initialized', { navLinksCount: navLinksLi.length });
+
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
     // Animate links
@@ -15,6 +17,7 @@ hamburger.addEventListener('click', () => {
     });
     // Hamburger animation
     hamburger.classList.toggle('toggle');
+    console.debug('[Portfolio Debug] Toggled navigation menu', { isOpen: navLinks.classList.contains('open') });
 });
 
 // Project Read More Toggle
@@ -26,9 +29,11 @@ readMoreButtons.forEach(button => {
         if (moreInfo.style.display === "block") {
             moreInfo.style.display = "none";
             button.textContent = "Read More";
+            console.debug('[Portfolio Debug] Collapsed project details', { projectTitle: button.closest('.project-info')?.querySelector('h3')?.textContent });
         } else {
             moreInfo.style.display = "block";
             button.textContent = "Read Less";
+            console.debug('[Portfolio Debug] Expanded project details', { projectTitle: button.closest('.project-info')?.querySelector('h3')?.textContent });
         }
     });
 });
